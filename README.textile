@@ -1,0 +1,27 @@
+h3. WHAT'S HERE ?
+
+I'm sharing tools I'm using when I build "Datawarehouses":http://blog.logeek.fr/2008/1/19/a-beginner-s-guide-to-datawarehouse using "ActiveWarehouse-ETL":http://activewarehouse.rubyforge.org/etl/.
+
+h3. QUICK DESCRIPTION
+
+* CsvHelper - allows to:
+** extract csv columns names in a stable fashion
+** returns all the values of a specific column
+* FixedWidthFileDestination : if you're outputting stuff to COBOL machines
+* DimensionMigrationHelper : useful for ActiveRecord migrations
+* French(Date/Time)DimensionBuilder : fine-grained date/time dimensions in french
+* EnsureFieldsPresenceProcessor : raises error as soon as one field is missing from a row
+* EscapeCSVProcessor : replaces \" by "" in hope FasterCSV will be able to munge your CSV afterwards
+* CleanUpTransform : like AW-ETL DecodeTransform, but leave the original value if no match is found
+
+h3. RUNNING SPECS
+
+rake spec
+
+Note: you'll need to gem install activewarehouse-etl and fastercsv
+
+h3. TO BE ADDED
+
+* chunk-splitters bulk load processor to cope with mysql timeouts on Windows
+
+=> thibaut.barrere@gmail.com
